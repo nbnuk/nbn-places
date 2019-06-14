@@ -3,16 +3,10 @@
         <title><g:layoutTitle/></title>
         <link href="${grailsApplication.config.skin.favicon}" rel="shortcut icon"  type="image/x-icon"/>
         <script type="text/javascript">
-            var BIE_VARS = { "autocompleteUrl" : "${grailsApplication.config.bie.index.url}/search/auto.jsonp"}
+            var BIE_VARS = { "autocompleteUrl" : "${grailsApplication.config.bieService.baseURL}/search/auto.jsonp"}
         </script>
         <link rel="stylesheet" href="/assets/nbn.css?compile=false" />
-        <g:if test="${grailsApplication.config?.nbn?.inns == 'true'}">
-            <style>
-                li.menu-item.menu-species {
-                    display: none;
-                }
-            </style>
-        </g:if>
+
         %{--
         <script type="text/javascript" src="/assets/jquery.i18n.min.js?compile=false"></script>
         <script type="text/javascript" src="/assets/jquery.i18n.properties.min.js?compile=false"></script>

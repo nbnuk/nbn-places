@@ -7,11 +7,9 @@ class UrlMappings {
                 // apply constraints here
             }
         }
-        if(getGrailsApplication().config?.nbn?.inns == 'true') {
-            "/"(controller: "species", action: "search")
-        } else {
-            "/"(view: "/index")
-        }
+
+        "/"(view: "/index")
+
         "500"(view:'/error')
         "404"(view:'/notFound')
     }

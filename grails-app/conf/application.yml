@@ -2,7 +2,7 @@
 grails:
     profile: web
     codegen:
-        defaultPackage: uk.org.nbn.atlas.bie # RR au.org.ala.bie
+        defaultPackage: uk.org.nbn.places
     spring:
         transactionManagement:
             proxies: false
@@ -16,7 +16,7 @@ grails:
             events: false
 info:
     app:
-        name: nbn-places # ala-bie
+        name: nbn-places
         version: '@info.app.version@'
         grailsVersion: '@info.app.grailsVersion@'
 spring:
@@ -101,7 +101,7 @@ app:
   dataDir: /tmp/gbif-ecat
 skin:
   layout: generic
-  orgNameLong: NBN Atlas
+  orgNameLong: ALA
   orgNameShort: Atlas
   fluidLayout: false
 bie:
@@ -109,11 +109,10 @@ bie:
   searchPath: /search
   index:
     url: http://localhost:8090/bie-index
-facets: idxtype,rank,speciesGroup,locatedInHubCountry,imageAvailable,conservationStatusAUS_s,conservationStatusACT_s,conservationStatusNSW_s,conservationStatusQLD_s,conservationStatusVIC_s,conservationStatusTAS_s,conservationStatusSA_s,conservationStatusWA_s,conservationStatusNT_s
-speciesParent: https://lists.ala.org.au/iconic-species
+facets: idxtype
 serverName: http://dev.ala.org.au:8080
-projectNameShort: NBN Atlas
-projectName: National Biodiversity Network
+projectNameShort: ALA
+projectName: ALA
 biocache:
     baseURL: "http://biocache.ala.org.au"
 biocacheService:
@@ -124,25 +123,14 @@ spatial:
 layersService:
     baseURL: http://spatial.ala.org.au/ws
 ala:
-    baseURL: https://nbnatlas.org
+    baseURL: http://ala.org.au
 collectory:
     baseURL: http://collections.ala.org.au
-    threatenedSpeciesCodesUrl: http://collections.ala.org.au/public/showDataResource
 regions:
     baseURL: http://regions.ala.org.au
-bhl:
-    baseURL: http://bhlidx.ala.org.au
-speciesList:
-    baseURL: http://lists.ala.org.au
 alerts:
-    baseUrl: http://alerts.ala.org.au/ws/
-sightings:
-    guidUrl: http://sightings.ala.org.au/
-eol:
-    lang: en
-defaultDecimalLatitude: -25.61
-defaultDecimalLongitude: 134.35
-defaultZoomLevel: 4
+    baseURL: http://alerts.ala.org.au/ws/
+
 image:
     thumbnailUrl: http://images.ala.org.au/image/proxyImageThumbnail?imageId=
 map:
@@ -153,6 +141,9 @@ map:
         attr: Map data &copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>, imagery &copy; <a href='http://cartodb.com/attributions'>CartoDB</a>
         domain: abcd
         colour: e6704c
+        decimalLatitude: -25.61
+        decimalLongitude: 134.35
+        zoomLevel: 4
     simpleMapButton: false
     records:
       colour: e6704c
@@ -174,25 +165,13 @@ map:
 
 bieService:
   queryContext:
-googleMapsApiKey: AIzaSyB0HIkSCV2EdkG50uM7s96IEbO6wUHTqy0
-languageCodesUrl: file:///data/nbn-places/config/languages.json
+languageCodesUrl: file:///data/places/config/languages.json
 geocode.querySuffix:
-occurrenceCounts:
-    enabled: true
-additionalResultsFields: kingdom
+
 admin_role: ROLE_ADMIN
 allowedImageEditingRoles: ROLE_ADMIN
-additionalMapFilter:
 synonymsTypes: synonym
-literature:
-    bhl:
-        url: https://bhlidx.ala.org.au/select
-    genbank:
-        url: https://www.ncbi.nlm.nih.gov
-    scholar:
-        url: https://scholar.google.com
-    trove:
-        url: https://api.trove.nla.gov.au/result?key=fvt2q0qinduian5d&zone=book&encoding=json
 show:
-    tabs: overview,gallery,records,data-partners
+    tabs: overview,gallery,records,data-partners,taxa-list
+    additionalMapFilter:
 

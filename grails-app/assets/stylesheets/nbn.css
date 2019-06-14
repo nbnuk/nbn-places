@@ -17,7 +17,7 @@
     padding-left: 0px;
 }
 
-.taxon-tabs .tab-content {
+.place-tabs .tab-content {
     border: none;
     padding-left: 0px;
     padding-right: 0px;
@@ -40,11 +40,4 @@
 
 .chart.cl16-chart { width:100% !important; }
 
-.species-headline-dr1818 { color: red; font-weight: bold }
 
-#conservationevidence_widget .nbn-study-count {
-    font-style: italic;
-    margin-top: 1em;
-    margin-left: 4em;
-    display: inline-block;
-}
