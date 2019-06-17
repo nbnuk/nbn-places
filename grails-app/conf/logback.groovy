@@ -102,7 +102,7 @@ if (Environment.isDevelopmentMode()) {
             (WARN) : [],
             (INFO) : [
                     'asset.pipeline',
-                    'au.org.ala',
+                    'uk.org.nbn',
                     'grails.app',
                     'grails.plugins.mail',
                     'grails.plugins.quartz',
@@ -114,7 +114,7 @@ if (Environment.isDevelopmentMode()) {
                     'org.apache.http.headers',
                     'org.apache.http.wire',
                     'org.hibernate.SQL',
-                    'au.org.ala.bie'
+                    'uk.org.nbn.places'
             ],
             (TRACE): []
     ].each { level, names ->

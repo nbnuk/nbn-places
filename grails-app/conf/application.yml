@@ -95,14 +95,14 @@ endpoints:
     jmx:
         unique-names: true
 ---
-#Required so that the gbif-ecat library does not bugger up initialisation from its internal application.properties
+#Required so that the gbif-ecat library does not break the initialisation from its internal application.properties
 app:
   name: nbn-places
   dataDir: /tmp/gbif-ecat
 skin:
   layout: generic
-  orgNameLong: ALA
-  orgNameShort: Atlas
+  orgNameLong: National Biodiversity Network
+  orgNameShort: NBN
   fluidLayout: false
 bie:
   baseURL: http://localhost:8080
