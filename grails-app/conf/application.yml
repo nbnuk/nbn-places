@@ -109,7 +109,6 @@ bie:
   searchPath: /search
   index:
     url: http://localhost:8090/bie-index
-facets: idxtype
 serverName: http://dev.ala.org.au:8080
 projectNameShort: ALA
 projectName: ALA
@@ -130,14 +129,15 @@ regions:
     baseURL: http://regions.ala.org.au
 alerts:
     baseURL: http://alerts.ala.org.au/ws/
-
+search:
+  facets: idxtype
 image:
     thumbnailUrl: http://images.ala.org.au/image/proxyImageThumbnail?imageId=
 map:
     default:
         id:
         token:
-        url: http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png
+        url: https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png
         attr: Map data &copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>, imagery &copy; <a href='http://cartodb.com/attributions'>CartoDB</a>
         domain: abcd
         colour: e6704c
@@ -172,6 +172,6 @@ admin_role: ROLE_ADMIN
 allowedImageEditingRoles: ROLE_ADMIN
 synonymsTypes: synonym
 show:
-    tabs: overview,gallery,records,data-partners,taxa-list
+    tabs: overview,gallery,taxa-list,records,data-partners
     additionalMapFilter:
 
