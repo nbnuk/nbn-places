@@ -5,6 +5,7 @@ target/*
 *.iml
 .DS_Store
 build*
+.gradle/
 out/*
 logs/*
 *.log
