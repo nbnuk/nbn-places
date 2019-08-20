@@ -22,7 +22,7 @@ apply plugin:"org.grails.grails-gsp"
 apply plugin:"asset-pipeline"
 
 //apply from: 'https://raw.githubusercontent.com/nbnuk/travis-build-configuration/master/travis_grails_publish.gradle' // RR fails
-//apply from: 'https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_grails_publish.gradle'
+apply from: 'https://raw.githubusercontent.com/AtlasOfLivingAustralia/travis-build-configuration/master/travis_grails_publish.gradle'
 
 boolean inplace = true
 if (inplace) {
