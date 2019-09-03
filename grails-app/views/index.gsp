@@ -215,60 +215,31 @@
         /*An array containing all the regions*/
 
         var regions = [
-            "Abney Park Cemetery",
-            "Acton Cemetery St Gabriel North Acton",
-            "Acton Cemetery St Gabriel North Acton Extension",
-            "Adath Yisroel Burial Ground Jesus Church Forty Hill",
-            "Alderney Road Cemetery",
-            "All Saints All Saints Highgate",
-            "All Saints All Saints Margaret Street",
-            "All Saints Church All Saints Poplar",
-            "All Saints Church All Saints Edmonton",
-            "All Saints Church All Saints Fulham",
-            "All Saints Church All Saints Harrow Weald",
-            "All Saints Church All Saints Laleham",
-            "All Souls Church All Souls Langham Place",
-            "Alperton Cemetery",
-            "Altab Ali Park St Dunstan Stepney",
-            "Ashford Burial Ground",
-            "Bancroft Road Cemetery",
-            "Bedfont Cemetery",
-            "Brady Street Cemetery",
-            "Brompton Cemetery",
-            "Bunhill Fields Cemetery",
-            "Cherry Lane Cemetery",
-            "Chiswick New Cemetery",
-            "Chiswick Old Cemetery",
-            "Christ Church Cemetery",
-            "Christ Church Christ Church Southgate",
-            "Christ Church Cockfosters",
-            "Christ Church Spitalfields",
-            "Christchurch Gardens St Peter Eaton Square",
-            "Christchurch Greyfriars Church",
-            "Church Of Holy Cross Greenford",
-            "City of Westminister Cemetery",
-            "Dovehouse Green St Luke",
-            "Drury Lane Gardens St Paul Covent Garden",
-            "East Finchley Cemetery",
-            "Eastcote Lane Cemetery",
-            "Edgwarebury Cemetery",
-            "Edmonton Cemetery",
-            "Enfield Cemetery",
-            "Fairchild Gardens",
-            "Federation Cemetery Edmonton",
-            "Feltham Cemetery",
-            "Fen Court St Olave Hart Street",
-            "Fulham Palace Road Cemetery",
-            "Globe Road Memorial Gardens",
-            "Golders Green parish church",
-            "Greenford Park Cemetery Southall",
-            "Gunnersbury Cemetery Ealing",
-            "Hackney Cemetery",
-            "Hammersmith Friends"
         ];
 
         /*initiate the autocomplete function on the "myInput" element, and pass along the regions array as possible autocomplete values:*/
         autocomplete(document.getElementById("myInput"), regions);
+
+        function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    regions = [];
+                    var resp = JSON.parse( this.responseText );
+                    for (var i=0; i<resp.searchResults.results.length; i++) {
+                        regions.push( resp.searchResults.results[i].bbg_name_s );
+                    }
+                    autocomplete(document.getElementById("myInput"), regions);
+
+                    /* document.getElementById("demo").innerHTML = this.responseText; */
+                }
+            };
+            xhttp.open("GET", "https://species-ws.nbnatlas.org/search?q=idxtype:REGIONFEATURED&rows=9999", true);
+            xhttp.send();
+        }
+
+        document.addEventListener('DOMContentLoaded', loadDoc, false);
+
     </script>
 
 
