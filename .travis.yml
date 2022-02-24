@@ -7,15 +7,18 @@ sudo: false
 branches:
   only:
   - master
+  - deveop
 before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 cache:
   directories:
-  - $HOME/.m2
-  - $HOME/.gradle/caches/
-  - $HOME/.gradle/wrapper/
-
+  - "$HOME/.m2"
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
 after_success:
-  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && travis_retry ./gradlew publish'
+- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && travis_retry ./gradlew publish'
+env:
+  global:
+  - secure: bzxnxpiXdL9gsHBKJgmgdmaGg32bOyIUQtdeW02Kb+WzhTw5BRmLu9TWMOtAC0vRdIE9Ypv6st9WrCg/AXREKpA1smz06DH0bvH3wf5JKxfYWEnh1mHI0jnob6/2vr9quBVEXtgOhUfBCg9z3VRYN4546LdXrjgHkjb3aMQHQ7F7O8u8kjx+y5ReVnAjG9tFZieq4zQk2pzC7+s+YDAS7Dhc+ywKuHOSxIBMNaxIiRdWaCNuabq/ruWCPvdCshmnb8Na34OYa4zy8u7ZuItUDOzc2JotJ2Z3xSRN6bWT7FIF0xJU5PkXHxtpkxLyLc6VDAbM8bzbUW5xVbuCfKearMaF3xvzRTPqLLKnvkpCeHZuO24D0tCKmB/rTaI8AdsEZEdkQkY/1oPi0Jx9gVznkkfo+pV/v/KEnECIHKmUDAzyWkmrhnixTW7F9TuziqTkjD42ZPv/s223IpqTZEl1Vv7Sm0eYYFgd9BVy+LH/EojsBSJhFCGltPP241WFXQKqSHsNA9slObwjUioVF6ibOvlPo/Fjg491fp3Fv6ktUayEqnLVACud/O/QYwyh/PP+c83ljQXW3wqsOG4DvwNUgIEO56Ucp4aD2XhHbEHSXtvLz5nJl2apJJj5mFdnivingMSsU8oipV3XZj0wtPGwaJg6AQ3gUt28CvFsBbsdMd0=
+  - secure: IraM8NmQ8ty1KQ1Xg0HMl9ZljUoD4RVBgIr/EFYOXRC4LQsWEndSBzn6YquZ1TIApoczhSKcPoe+mHH2jPCD5eRIW0ZKDAs1wCK/QJzoOuV6pIwPvlC4nkfE9z8aK+GRVEoxX/s0FXslGFb56+TWgIalmUZMR8mF+5imUiWTTFCG8bT23EYBVMZi4ZdL9nlHxySrnggcKLInC6T3gv35FXAsOqyJQqGai1znf2YtIZkd6bn2PJ593SosQSNo1X2GkJmL9OVYahBTiBd6Hpjkv92c+C/SsebjcEqt1kLALcjqE9N5E9zTyCmQPn3N3BGaHqN5HTQvevNNiY8gi1vW5u2MCopKVzK+oibGr2aIG2eHJu5OZ30a/N2CCvUoAXntkT5IQwMN+MT+T9ycUyBqT+lvePOMudcvqxlkEdALh1Vfg+vfttNGC7dkTn/nadnhBOfVXg3HO5A46OabUM7mqJMJyyNbD3uHSMgRaSmfFEoplZiu/W1qUu2vo/kfEhSwFqUH4UIkL7ni3RM8SGDilDWNX6Fmaxw6XpXTTeETFXLjCoLyKGVK1QpvIuBOG/AAOU/FDprYgR2VDwScZCp7lJ8CCJ26DenhjA09zoLkU24B2Q1Q5wFsNOP2a7hDGAAv/Bi/fBUir6p5jmSJupRH0DMOh/OP5F3o7t4+G7EDwMM=
